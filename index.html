@@ -365,7 +365,7 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">ID_N</th>\
-                        <td>' + (feature.properties['ID_N'] !== null ? autolinker.link(feature.properties['ID_N'].toLocaleString()) : '') + '</td>\
+                        <td>' + (feature.properties['ID_N'] !== null ? autolinker.link(feature.properties['ID_N:dd:::-'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
@@ -394,7 +394,7 @@
                 dashArray: '1,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0, 
+                weight: 2.0,
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,0,255,0.0)',
