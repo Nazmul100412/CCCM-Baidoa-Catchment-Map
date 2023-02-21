@@ -365,7 +365,7 @@
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">ID_N</th>\
-                        <td>' + (feature.properties['ID_N'] !== null ? autolinker.link(feature.properties['ID_N:dd:::-'].toLocaleString()) : '') + '</td>\
+                        <td>' + (feature.properties['ID_N'] !== null ? autolinker.link(feature.properties['ID_N'].toLocaleString()) : 'uu') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
