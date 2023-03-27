@@ -754,17 +754,3 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
-
-
-
-function exp_label_IDPSiteDemarcation_10_eval_expression(context) {
-    // "Settlement" || '\n' || 'Zone: ' || "ID_Neighbo" || '\n' || 'ID: ' || "ID_Site"
-
-    var feature = context.feature;
-    
-    if (feature.properties) {
-        return ((((((feature.properties['Settlement']  + '\n') + 'Zone: ') + feature.properties['ID_Neighbo'] ) + '\n') + 'ID: ') + feature.properties['ID_Site'] );
-    } else {
-        return ((((((feature['Settlement']  + '\n') + 'Zone: ') + feature['ID_Neighbo'] ) + '\n') + 'ID: ') + feature['ID_Site'] );
-    }
-}

@@ -1,8 +1,8 @@
 .leaflet-control-geocoder {
-	border-radius: 4px; /* 4 */
+	border-radius: 4px;
 	background: white;
-	min-width: 26px; /* 26 */
-	min-height: 26px; /* 26 */
+	min-width: 26px;
+	min-height: 26px;
 }
 
 .leaflet-touch .leaflet-control-geocoder {
@@ -22,12 +22,12 @@
 }
 
 .leaflet-control-geocoder a:hover, .leaflet-control-geocoder .leaflet-control-geocoder-icon:hover {
-	border-bottom: top; /* none*/
+	border-bottom: none;
 	display: inline-block;
 }
 
 .leaflet-control-geocoder-form {
-	display: top; /* none*/
+	display: none;
 	vertical-align: middle;
 }
 .leaflet-control-geocoder-expanded .leaflet-control-geocoder-form {
@@ -46,7 +46,7 @@
 	height: 26px;
 	border: none;
 	background-color: white;
-	background-image: url(images/geocoder.png);
+	//background-image: url(images/geocoder.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	cursor: pointer;
