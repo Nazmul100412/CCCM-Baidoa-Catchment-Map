@@ -39,7 +39,7 @@
         <script src="js/leaflet-search.js"></script>
         <script src="data/DistrictBoundary_1.js"></script>
         <script src="data/OPZBoundary_2.js"></script>
-        <script src="data/IDPSiteDemarcation_3.js"></script>
+        <script src="data/VillageCityPlan_3.js"></script>
         <script src="data/CatchmentZoneAreaBaidoa_4.js"></script>
         <script src="data/AccessibilityRoadNetwork_5.js"></script>
         <script src="data/IDPSiteLocations_6.js"></script>
@@ -47,7 +47,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[3.0841554342802042,43.588221969280326],[3.1727348724401154,43.7216041348493]]);
+        }).fitBounds([[3.0757869859115776,43.59220134638879],[3.164366424071489,43.725583511957765]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -237,72 +237,206 @@
         });
         bounds_group.addLayer(layer_OPZBoundary_2);
         map.addLayer(layer_OPZBoundary_2);
-        function pop_IDPSiteDemarcation_3(feature, layer) {
+        function pop_VillageCityPlan_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ID_Jul'] !== null ? autolinker.link(feature.properties['ID_Jul'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Village'] !== null ? autolinker.link(feature.properties['Village'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['village'] !== null ? autolinker.link(feature.properties['village'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['District_N'] !== null ? autolinker.link(feature.properties['District_N'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['number'] !== null ? autolinker.link(feature.properties['number'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Settlement</th>\
-                        <td>' + (feature.properties['Settlement'] !== null ? autolinker.link(feature.properties['Settlement'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Latitude'] !== null ? autolinker.link(feature.properties['Latitude'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['Longitude'] !== null ? autolinker.link(feature.properties['Longitude'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ID_Neighbo'] !== null ? autolinker.link(feature.properties['ID_Neighbo'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ID_Site'] !== null ? autolinker.link(feature.properties['ID_Site'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['ID_SubSite'] !== null ? autolinker.link(feature.properties['ID_SubSite'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Code_Site</th>\
-                        <td>' + (feature.properties['Code_Site'] !== null ? autolinker.link(feature.properties['Code_Site'].toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['subvillage'] !== null ? autolinker.link(feature.properties['subvillage'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_IDPSiteDemarcation_3_0() {
-            return {
-                pane: 'pane_IDPSiteDemarcation_3',
+        function style_VillageCityPlan_3_0(feature) {
+            switch(String(feature.properties['village'])) {
+                case 'Adaado':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
                 opacity: 1,
-                color: 'rgba(247,255,1,1.0)',
+                color: 'rgba(255,255,255,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 2.0, 
+                weight: 1, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(106,87,217,0.0)',
+                fillColor: 'rgba(125,253,111,1.0)',
                 interactive: true,
             }
+                    break;
+                case 'Bardale':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(73,107,9,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Durasalam':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,69,1,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Horseed':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,208,1,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Howl Wadaag':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(144,0,43,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Isha':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,206,203,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Salamey':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,92,90,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Towfiq':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(118,110,208,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Wadajiir':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,33,214,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'Weberi':
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(252,0,239,1.0)',
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_VillageCityPlan_3',
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(137,229,178,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
         }
-        map.createPane('pane_IDPSiteDemarcation_3');
-        map.getPane('pane_IDPSiteDemarcation_3').style.zIndex = 403;
-        map.getPane('pane_IDPSiteDemarcation_3').style['mix-blend-mode'] = 'normal';
-        var layer_IDPSiteDemarcation_3 = new L.geoJson(json_IDPSiteDemarcation_3, {
+        map.createPane('pane_VillageCityPlan_3');
+        map.getPane('pane_VillageCityPlan_3').style.zIndex = 403;
+        map.getPane('pane_VillageCityPlan_3').style['mix-blend-mode'] = 'normal';
+        var layer_VillageCityPlan_3 = new L.geoJson(json_VillageCityPlan_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_IDPSiteDemarcation_3',
-            layerName: 'layer_IDPSiteDemarcation_3',
-            pane: 'pane_IDPSiteDemarcation_3',
-            onEachFeature: pop_IDPSiteDemarcation_3,
-            style: style_IDPSiteDemarcation_3_0,
+            dataVar: 'json_VillageCityPlan_3',
+            layerName: 'layer_VillageCityPlan_3',
+            pane: 'pane_VillageCityPlan_3',
+            onEachFeature: pop_VillageCityPlan_3,
+            style: style_VillageCityPlan_3_0,
         });
-        bounds_group.addLayer(layer_IDPSiteDemarcation_3);
+        bounds_group.addLayer(layer_VillageCityPlan_3);
         function pop_CatchmentZoneAreaBaidoa_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -327,7 +461,7 @@
                 weight: 6.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(153,241,255,0.4745098039215686)',
+                fillColor: 'rgba(153,241,255,0.07450980392156863)',
                 interactive: true,
             }
         }
@@ -342,7 +476,7 @@
                 weight: 2.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,0,255,0.0)',
+                fillColor: 'rgba(153,241,255,0.10980392156862745)',
                 interactive: true,
             }
         }
@@ -794,8 +928,21 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/InformationCenter_7.png" /> Information Center': layer_InformationCenter_7,'<img src="legend/IDPSiteLocations_6.png" /> IDP Site Locations': layer_IDPSiteLocations_6,'AccessibilityRoadNetwork<br /><table><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_5_PrimaryRoad0.png" /></td><td>Primary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_5_SecondaryRoad1.png" /></td><td>Secondary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_5_TertiaryRoad2.png" /></td><td>Tertiary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_5_InternalRoad3.png" /></td><td>Internal Road</td></tr></table>': layer_AccessibilityRoadNetwork_5,'<img src="legend/CatchmentZoneAreaBaidoa_4.png" /> Catchment/Zone Area Baidoa': layer_CatchmentZoneAreaBaidoa_4,'<img src="legend/IDPSiteDemarcation_3.png" /> IDP Site Demarcation': layer_IDPSiteDemarcation_3,'<img src="legend/OPZBoundary_2.png" /> OPZ Boundary': layer_OPZBoundary_2,'<img src="legend/DistrictBoundary_1.png" /> District Boundary': layer_DistrictBoundary_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/InformationCenter_7.png" /> Information Center': layer_InformationCenter_7,'<img src="legend/IDPSiteLocations_6.png" /> IDP Site Locations': layer_IDPSiteLocations_6,'AccessibilityRoadNetwork<br /><table><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_5_PrimaryRoad0.png" /></td><td>Primary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_5_SecondaryRoad1.png" /></td><td>Secondary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_5_TertiaryRoad2.png" /></td><td>Tertiary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_5_InternalRoad3.png" /></td><td>Internal Road</td></tr></table>': layer_AccessibilityRoadNetwork_5,'<img src="legend/CatchmentZoneAreaBaidoa_4.png" /> Catchment/Zone Area Baidoa': layer_CatchmentZoneAreaBaidoa_4,'Village City Plan<br /><table><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Adaado0.png" /></td><td>Adaado</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Bardale1.png" /></td><td>Bardale</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Durasalam2.png" /></td><td>Durasalam</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Horseed3.png" /></td><td>Horseed</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_HowlWadaag4.png" /></td><td>Howl Wadaag</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Isha5.png" /></td><td>Isha</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Salamey6.png" /></td><td>Salamey</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Towfiq7.png" /></td><td>Towfiq</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Wadajiir8.png" /></td><td>Wadajiir</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_Weberi9.png" /></td><td>Weberi</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_3_10.png" /></td><td></td></tr></table>': layer_VillageCityPlan_3,'<img src="legend/OPZBoundary_2.png" /> OPZ Boundary': layer_OPZBoundary_2,'<img src="legend/DistrictBoundary_1.png" /> District Boundary': layer_DistrictBoundary_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
         setBounds();
+        var i = 0;
+        layer_VillageCityPlan_3.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['subvillage'] !== null?String('<div style="color: #323232; font-size: 20pt; font-family: \'Gill Sans MT\', sans-serif;">' + layer.feature.properties['subvillage']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_VillageCityPlan_3'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
         var i = 0;
         layer_CatchmentZoneAreaBaidoa_4.eachLayer(function(layer) {
             var context = {
@@ -816,15 +963,15 @@
             propertyName: 'ID_N'}));
         document.getElementsByClassName('search-button')[0].className +=
          ' fa fa-binoculars';
-        resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_IDPSiteDemarcation_3,layer_CatchmentZoneAreaBaidoa_4,layer_IDPSiteLocations_6]);
+        resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_VillageCityPlan_3,layer_CatchmentZoneAreaBaidoa_4,layer_IDPSiteLocations_6]);
         map.on("zoomend", function(){
-            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_IDPSiteDemarcation_3,layer_CatchmentZoneAreaBaidoa_4,layer_IDPSiteLocations_6]);
+            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_VillageCityPlan_3,layer_CatchmentZoneAreaBaidoa_4,layer_IDPSiteLocations_6]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_IDPSiteDemarcation_3,layer_CatchmentZoneAreaBaidoa_4,layer_IDPSiteLocations_6]);
+            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_VillageCityPlan_3,layer_CatchmentZoneAreaBaidoa_4,layer_IDPSiteLocations_6]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_IDPSiteDemarcation_3,layer_CatchmentZoneAreaBaidoa_4,layer_IDPSiteLocations_6]);
+            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_VillageCityPlan_3,layer_CatchmentZoneAreaBaidoa_4,layer_IDPSiteLocations_6]);
         });
         </script>
     </body>
