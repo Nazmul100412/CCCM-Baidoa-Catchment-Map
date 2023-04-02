@@ -35,24 +35,24 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/DistrictBoundary_2.js"></script>
-        <script src="data/OPZBoundary_3.js"></script>
-        <script src="data/IDPSiteDemarcation_4.js"></script>
-        <script src="data/VillageCityPlan_5.js"></script>
-        <script src="data/CatchmentZoneAreaBaidoa_6.js"></script>
-        <script src="data/AccessibilityRoadNetwork_7.js"></script>
-        <script src="data/IDPSiteLocations_8.js"></script>
-        <script src="data/WaterDeliveryPoint_9.js"></script>
-        <script src="data/NutritionSites_10.js"></script>
-        <script src="data/InformationCenter_11.js"></script>
-        <script src="data/PublicSchool_12.js"></script>
-        <script src="data/IDPSchool_13.js"></script>
-        <script src="data/HealthFacilities_14.js"></script>
-        <script src="data/GBVServicePoint_15.js"></script>
+        <script src="data/DistrictBoundary_1.js"></script>
+        <script src="data/OPZBoundary_2.js"></script>
+        <script src="data/IDPSiteDemarcation_3.js"></script>
+        <script src="data/VillageBoundary_4.js"></script>
+        <script src="data/CatchmentZoneAreaBaidoa_5.js"></script>
+        <script src="data/AccessibilityRoadNetwork_6.js"></script>
+        <script src="data/IDPSiteLocations_7.js"></script>
+        <script src="data/WaterDeliveryPoint_8.js"></script>
+        <script src="data/NutritionSites_9.js"></script>
+        <script src="data/InformationCenter_10.js"></script>
+        <script src="data/PublicSchool_11.js"></script>
+        <script src="data/IDPSchool_12.js"></script>
+        <script src="data/HealthFacilities_13.js"></script>
+        <script src="data/GBVServicePoint_14.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[3.0748892213356323,43.58603099620811],[3.1634686594955435,43.719413161777084]]);
+        }).fitBounds([[3.098482114631531,43.61925354175093],[3.1427718337114867,43.68617216101655]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -83,17 +83,7 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        map.createPane('pane_EsriTopographic_1');
-        map.getPane('pane_EsriTopographic_1').style.zIndex = 401;
-        var layer_EsriTopographic_1 = L.tileLayer('https://server.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-            pane: 'pane_EsriTopographic_1',
-            opacity: 1.0,
-            attribution: '',
-            minZoom: 1,
-            maxZoom: 28,
-        });
-        layer_EsriTopographic_1;
-        function pop_DistrictBoundary_2(feature, layer) {
+        function pop_DistrictBoundary_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
@@ -165,9 +155,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_DistrictBoundary_2_0() {
+        function style_DistrictBoundary_1_0() {
             return {
-                pane: 'pane_DistrictBoundary_2',
+                pane: 'pane_DistrictBoundary_1',
                 opacity: 1,
                 color: 'rgba(6,0,0,1.0)',
                 dashArray: '10,5',
@@ -178,21 +168,21 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_DistrictBoundary_2');
-        map.getPane('pane_DistrictBoundary_2').style.zIndex = 402;
-        map.getPane('pane_DistrictBoundary_2').style['mix-blend-mode'] = 'normal';
-        var layer_DistrictBoundary_2 = new L.geoJson(json_DistrictBoundary_2, {
+        map.createPane('pane_DistrictBoundary_1');
+        map.getPane('pane_DistrictBoundary_1').style.zIndex = 401;
+        map.getPane('pane_DistrictBoundary_1').style['mix-blend-mode'] = 'normal';
+        var layer_DistrictBoundary_1 = new L.geoJson(json_DistrictBoundary_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_DistrictBoundary_2',
-            layerName: 'layer_DistrictBoundary_2',
-            pane: 'pane_DistrictBoundary_2',
-            onEachFeature: pop_DistrictBoundary_2,
-            style: style_DistrictBoundary_2_0,
+            dataVar: 'json_DistrictBoundary_1',
+            layerName: 'layer_DistrictBoundary_1',
+            pane: 'pane_DistrictBoundary_1',
+            onEachFeature: pop_DistrictBoundary_1,
+            style: style_DistrictBoundary_1_0,
         });
-        bounds_group.addLayer(layer_DistrictBoundary_2);
-        map.addLayer(layer_DistrictBoundary_2);
-        function pop_OPZBoundary_3(feature, layer) {
+        bounds_group.addLayer(layer_DistrictBoundary_1);
+        map.addLayer(layer_DistrictBoundary_1);
+        function pop_OPZBoundary_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
@@ -225,9 +215,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_OPZBoundary_3_0() {
+        function style_OPZBoundary_2_0() {
             return {
-                pane: 'pane_OPZBoundary_3',
+                pane: 'pane_OPZBoundary_2',
                 opacity: 1,
                 color: 'rgba(116,5,87,1.0)',
                 dashArray: '1,5',
@@ -238,21 +228,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_OPZBoundary_3');
-        map.getPane('pane_OPZBoundary_3').style.zIndex = 403;
-        map.getPane('pane_OPZBoundary_3').style['mix-blend-mode'] = 'normal';
-        var layer_OPZBoundary_3 = new L.geoJson(json_OPZBoundary_3, {
+        map.createPane('pane_OPZBoundary_2');
+        map.getPane('pane_OPZBoundary_2').style.zIndex = 402;
+        map.getPane('pane_OPZBoundary_2').style['mix-blend-mode'] = 'normal';
+        var layer_OPZBoundary_2 = new L.geoJson(json_OPZBoundary_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_OPZBoundary_3',
-            layerName: 'layer_OPZBoundary_3',
-            pane: 'pane_OPZBoundary_3',
-            onEachFeature: pop_OPZBoundary_3,
-            style: style_OPZBoundary_3_0,
+            dataVar: 'json_OPZBoundary_2',
+            layerName: 'layer_OPZBoundary_2',
+            pane: 'pane_OPZBoundary_2',
+            onEachFeature: pop_OPZBoundary_2,
+            style: style_OPZBoundary_2_0,
         });
-        bounds_group.addLayer(layer_OPZBoundary_3);
-        map.addLayer(layer_OPZBoundary_3);
-        function pop_IDPSiteDemarcation_4(feature, layer) {
+        bounds_group.addLayer(layer_OPZBoundary_2);
+        function pop_IDPSiteDemarcation_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['ID_Jul'] !== null ? autolinker.link(feature.properties['ID_Jul'].toLocaleString()) : '') + '</td>\
@@ -290,9 +279,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_IDPSiteDemarcation_4_0() {
+        function style_IDPSiteDemarcation_3_0() {
             return {
-                pane: 'pane_IDPSiteDemarcation_4',
+                pane: 'pane_IDPSiteDemarcation_3',
                 opacity: 1,
                 color: 'rgba(247,255,1,1.0)',
                 dashArray: '',
@@ -305,220 +294,234 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_IDPSiteDemarcation_4');
-        map.getPane('pane_IDPSiteDemarcation_4').style.zIndex = 404;
-        map.getPane('pane_IDPSiteDemarcation_4').style['mix-blend-mode'] = 'normal';
-        var layer_IDPSiteDemarcation_4 = new L.geoJson(json_IDPSiteDemarcation_4, {
+        map.createPane('pane_IDPSiteDemarcation_3');
+        map.getPane('pane_IDPSiteDemarcation_3').style.zIndex = 403;
+        map.getPane('pane_IDPSiteDemarcation_3').style['mix-blend-mode'] = 'normal';
+        var layer_IDPSiteDemarcation_3 = new L.geoJson(json_IDPSiteDemarcation_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_IDPSiteDemarcation_4',
-            layerName: 'layer_IDPSiteDemarcation_4',
-            pane: 'pane_IDPSiteDemarcation_4',
-            onEachFeature: pop_IDPSiteDemarcation_4,
-            style: style_IDPSiteDemarcation_4_0,
+            dataVar: 'json_IDPSiteDemarcation_3',
+            layerName: 'layer_IDPSiteDemarcation_3',
+            pane: 'pane_IDPSiteDemarcation_3',
+            onEachFeature: pop_IDPSiteDemarcation_3,
+            style: style_IDPSiteDemarcation_3_0,
         });
-        bounds_group.addLayer(layer_IDPSiteDemarcation_4);
-        function pop_VillageCityPlan_5(feature, layer) {
+        bounds_group.addLayer(layer_IDPSiteDemarcation_3);
+        function pop_VillageBoundary_4(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['village'] !== null ? autolinker.link(feature.properties['village'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['number'] !== null ? autolinker.link(feature.properties['number'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['subvillage'] !== null ? autolinker.link(feature.properties['subvillage'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">village</th>\
+                        <td>' + (feature.properties['village'] !== null ? autolinker.link(feature.properties['village'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_VillageCityPlan_5_0(feature) {
+        function style_VillageBoundary_4_0(feature) {
             switch(String(feature.properties['village'])) {
                 case 'Adaado':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(125,253,111,0.4745098039215686)',
+                fillColor: 'rgba(230,24,233,0.4823529411764706)',
                 interactive: true,
             }
                     break;
                 case 'Bardale':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(73,107,9,0.5019607843137255)',
+                fillColor: 'rgba(27,0,178,0.47843137254901963)',
                 interactive: true,
             }
                     break;
                 case 'Durasalam':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,69,1,0.4392156862745098)',
+                fillColor: 'rgba(1,242,255,0.4392156862745098)',
                 interactive: true,
             }
                     break;
                 case 'Horseed':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,208,1,0.4980392156862745)',
+                fillColor: 'rgba(235,25,116,0.49411764705882355)',
                 interactive: true,
             }
                     break;
                 case 'Howl Wadaag':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(144,0,43,0.47058823529411764)',
+                fillColor: 'rgba(48,206,140,0.4549019607843137)',
                 interactive: true,
             }
                     break;
                 case 'Isha':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,206,203,0.4666666666666667)',
+                fillColor: 'rgba(175,221,95,0.4823529411764706)',
                 interactive: true,
             }
                     break;
                 case 'Salamey':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,92,90,0.47843137254901963)',
+                fillColor: 'rgba(255,149,1,0.47058823529411764)',
                 interactive: true,
             }
                     break;
                 case 'Towfiq':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(118,110,208,0.49019607843137253)',
+                fillColor: 'rgba(92,235,89,0.4549019607843137)',
                 interactive: true,
             }
                     break;
                 case 'Wadajiir':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(145,33,214,0.5019607843137255)',
+                fillColor: 'rgba(70,184,210,0.4823529411764706)',
                 interactive: true,
             }
                     break;
                 case 'Weberi':
                     return {
-                pane: 'pane_VillageCityPlan_5',
+                pane: 'pane_VillageBoundary_4',
                 opacity: 1,
-                color: 'rgba(255,255,255,1.0)',
-                dashArray: '',
+                color: 'rgba(1,255,213,1.0)',
+                dashArray: '10,5',
                 lineCap: 'butt',
                 lineJoin: 'miter',
-                weight: 1, 
+                weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(252,0,239,0.4823529411764706)',
+                fillColor: 'rgba(0,254,246,0.4823529411764706)',
                 interactive: true,
             }
                     break;
             }
         }
-        map.createPane('pane_VillageCityPlan_5');
-        map.getPane('pane_VillageCityPlan_5').style.zIndex = 405;
-        map.getPane('pane_VillageCityPlan_5').style['mix-blend-mode'] = 'normal';
-        var layer_VillageCityPlan_5 = new L.geoJson(json_VillageCityPlan_5, {
+        map.createPane('pane_VillageBoundary_4');
+        map.getPane('pane_VillageBoundary_4').style.zIndex = 404;
+        map.getPane('pane_VillageBoundary_4').style['mix-blend-mode'] = 'normal';
+        var layer_VillageBoundary_4 = new L.geoJson(json_VillageBoundary_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_VillageCityPlan_5',
-            layerName: 'layer_VillageCityPlan_5',
-            pane: 'pane_VillageCityPlan_5',
-            onEachFeature: pop_VillageCityPlan_5,
-            style: style_VillageCityPlan_5_0,
+            dataVar: 'json_VillageBoundary_4',
+            layerName: 'layer_VillageBoundary_4',
+            pane: 'pane_VillageBoundary_4',
+            onEachFeature: pop_VillageBoundary_4,
+            style: style_VillageBoundary_4_0,
         });
-        bounds_group.addLayer(layer_VillageCityPlan_5);
-        function pop_CatchmentZoneAreaBaidoa_6(feature, layer) {
+        bounds_group.addLayer(layer_VillageBoundary_4);
+        map.addLayer(layer_VillageBoundary_4);
+        function pop_CatchmentZoneAreaBaidoa_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">ID_N</th>\
                         <td>' + (feature.properties['ID_N'] !== null ? autolinker.link(feature.properties['ID_N'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Zone'] !== null ? autolinker.link(feature.properties['Zone'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Zone</th>\
+                        <td>' + (feature.properties['Zone'] !== null ? autolinker.link(feature.properties['Zone'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Village</th>\
+                        <td>' + (feature.properties['Village'] !== null ? autolinker.link(feature.properties['Village'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Shelter</th>\
+                        <td>' + (feature.properties['Shelter'] !== null ? autolinker.link(feature.properties['Shelter'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">HH</th>\
+                        <td>' + (feature.properties['HH'] !== null ? autolinker.link(feature.properties['HH'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Individual</th>\
+                        <td>' + (feature.properties['Individual'] !== null ? autolinker.link(feature.properties['Individual'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">IDP_Site</th>\
+                        <td>' + (feature.properties['IDP_Site'] !== null ? autolinker.link(feature.properties['IDP_Site'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_CatchmentZoneAreaBaidoa_6_0() {
+        function style_CatchmentZoneAreaBaidoa_5_0() {
             return {
-                pane: 'pane_CatchmentZoneAreaBaidoa_6',
+                pane: 'pane_CatchmentZoneAreaBaidoa_5',
                 opacity: 1,
                 color: 'rgba(1,52,255,1.0)',
                 dashArray: '',
@@ -531,9 +534,9 @@
                 interactive: true,
             }
         }
-        function style_CatchmentZoneAreaBaidoa_6_1() {
+        function style_CatchmentZoneAreaBaidoa_5_1() {
             return {
-                pane: 'pane_CatchmentZoneAreaBaidoa_6',
+                pane: 'pane_CatchmentZoneAreaBaidoa_5',
                 opacity: 1,
                 color: 'rgba(255,255,255,1.0)',
                 dashArray: '1,5',
@@ -546,45 +549,30 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_CatchmentZoneAreaBaidoa_6');
-        map.getPane('pane_CatchmentZoneAreaBaidoa_6').style.zIndex = 406;
-        map.getPane('pane_CatchmentZoneAreaBaidoa_6').style['mix-blend-mode'] = 'normal';
-        var layer_CatchmentZoneAreaBaidoa_6 = new L.geoJson.multiStyle(json_CatchmentZoneAreaBaidoa_6, {
+        map.createPane('pane_CatchmentZoneAreaBaidoa_5');
+        map.getPane('pane_CatchmentZoneAreaBaidoa_5').style.zIndex = 405;
+        map.getPane('pane_CatchmentZoneAreaBaidoa_5').style['mix-blend-mode'] = 'normal';
+        var layer_CatchmentZoneAreaBaidoa_5 = new L.geoJson.multiStyle(json_CatchmentZoneAreaBaidoa_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_CatchmentZoneAreaBaidoa_6',
-            layerName: 'layer_CatchmentZoneAreaBaidoa_6',
-            pane: 'pane_CatchmentZoneAreaBaidoa_6',
-            onEachFeature: pop_CatchmentZoneAreaBaidoa_6,
-            styles: [style_CatchmentZoneAreaBaidoa_6_0,style_CatchmentZoneAreaBaidoa_6_1,]
+            dataVar: 'json_CatchmentZoneAreaBaidoa_5',
+            layerName: 'layer_CatchmentZoneAreaBaidoa_5',
+            pane: 'pane_CatchmentZoneAreaBaidoa_5',
+            onEachFeature: pop_CatchmentZoneAreaBaidoa_5,
+            styles: [style_CatchmentZoneAreaBaidoa_5_0,style_CatchmentZoneAreaBaidoa_5_1,]
         });
-        bounds_group.addLayer(layer_CatchmentZoneAreaBaidoa_6);
-        map.addLayer(layer_CatchmentZoneAreaBaidoa_6);
-        function pop_AccessibilityRoadNetwork_7(feature, layer) {
+        bounds_group.addLayer(layer_CatchmentZoneAreaBaidoa_5);
+        map.addLayer(layer_CatchmentZoneAreaBaidoa_5);
+        function pop_AccessibilityRoadNetwork_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['osm_id'] !== null ? autolinker.link(feature.properties['osm_id'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2">' + (feature.properties['code'] !== null ? autolinker.link(feature.properties['code'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fclass'] !== null ? autolinker.link(feature.properties['fclass'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['name'] !== null ? autolinker.link(feature.properties['name'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ref'] !== null ? autolinker.link(feature.properties['ref'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
                         <td colspan="2">' + (feature.properties['oneway'] !== null ? autolinker.link(feature.properties['oneway'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['maxspeed'] !== null ? autolinker.link(feature.properties['maxspeed'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(feature.properties['layer'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['bridge'] !== null ? autolinker.link(feature.properties['bridge'].toLocaleString()) : '') + '</td>\
@@ -599,11 +587,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_AccessibilityRoadNetwork_7_0(feature) {
+        function style_AccessibilityRoadNetwork_6_0(feature) {
             switch(String(feature.properties['Category'])) {
                 case 'Primary Road':
                     return {
-                pane: 'pane_AccessibilityRoadNetwork_7',
+                pane: 'pane_AccessibilityRoadNetwork_6',
                 opacity: 1,
                 color: 'rgba(138,0,23,1.0)',
                 dashArray: '',
@@ -616,7 +604,7 @@
                     break;
                 case 'Secondary Road':
                     return {
-                pane: 'pane_AccessibilityRoadNetwork_7',
+                pane: 'pane_AccessibilityRoadNetwork_6',
                 opacity: 1,
                 color: 'rgba(232,19,0,1.0)',
                 dashArray: '',
@@ -629,7 +617,7 @@
                     break;
                 case 'Tertiary Road':
                     return {
-                pane: 'pane_AccessibilityRoadNetwork_7',
+                pane: 'pane_AccessibilityRoadNetwork_6',
                 opacity: 1,
                 color: 'rgba(255,117,128,1.0)',
                 dashArray: '',
@@ -642,7 +630,7 @@
                     break;
                 case 'Internal Road':
                     return {
-                pane: 'pane_AccessibilityRoadNetwork_7',
+                pane: 'pane_AccessibilityRoadNetwork_6',
                 opacity: 1,
                 color: 'rgba(255,167,236,1.0)',
                 dashArray: '',
@@ -655,21 +643,21 @@
                     break;
             }
         }
-        map.createPane('pane_AccessibilityRoadNetwork_7');
-        map.getPane('pane_AccessibilityRoadNetwork_7').style.zIndex = 407;
-        map.getPane('pane_AccessibilityRoadNetwork_7').style['mix-blend-mode'] = 'normal';
-        var layer_AccessibilityRoadNetwork_7 = new L.geoJson(json_AccessibilityRoadNetwork_7, {
+        map.createPane('pane_AccessibilityRoadNetwork_6');
+        map.getPane('pane_AccessibilityRoadNetwork_6').style.zIndex = 406;
+        map.getPane('pane_AccessibilityRoadNetwork_6').style['mix-blend-mode'] = 'normal';
+        var layer_AccessibilityRoadNetwork_6 = new L.geoJson(json_AccessibilityRoadNetwork_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AccessibilityRoadNetwork_7',
-            layerName: 'layer_AccessibilityRoadNetwork_7',
-            pane: 'pane_AccessibilityRoadNetwork_7',
-            onEachFeature: pop_AccessibilityRoadNetwork_7,
-            style: style_AccessibilityRoadNetwork_7_0,
+            dataVar: 'json_AccessibilityRoadNetwork_6',
+            layerName: 'layer_AccessibilityRoadNetwork_6',
+            pane: 'pane_AccessibilityRoadNetwork_6',
+            onEachFeature: pop_AccessibilityRoadNetwork_6,
+            style: style_AccessibilityRoadNetwork_6_0,
         });
-        bounds_group.addLayer(layer_AccessibilityRoadNetwork_7);
-        map.addLayer(layer_AccessibilityRoadNetwork_7);
-        function pop_IDPSiteLocations_8(feature, layer) {
+        bounds_group.addLayer(layer_AccessibilityRoadNetwork_6);
+        map.addLayer(layer_AccessibilityRoadNetwork_6);
+        function pop_IDPSiteLocations_7(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Date'] !== null ? autolinker.link(feature.properties['Date'].toLocaleString()) : '') + '</td>\
@@ -741,9 +729,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_IDPSiteLocations_8_0() {
+        function style_IDPSiteLocations_7_0() {
             return {
-                pane: 'pane_IDPSiteLocations_8',
+                pane: 'pane_IDPSiteLocations_7',
                 radius: 4.0,
                 opacity: 1,
                 color: 'rgba(245,89,89,1.0)',
@@ -757,27 +745,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_IDPSiteLocations_8');
-        map.getPane('pane_IDPSiteLocations_8').style.zIndex = 408;
-        map.getPane('pane_IDPSiteLocations_8').style['mix-blend-mode'] = 'normal';
-        var layer_IDPSiteLocations_8 = new L.geoJson(json_IDPSiteLocations_8, {
+        map.createPane('pane_IDPSiteLocations_7');
+        map.getPane('pane_IDPSiteLocations_7').style.zIndex = 407;
+        map.getPane('pane_IDPSiteLocations_7').style['mix-blend-mode'] = 'normal';
+        var layer_IDPSiteLocations_7 = new L.geoJson(json_IDPSiteLocations_7, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_IDPSiteLocations_8',
-            layerName: 'layer_IDPSiteLocations_8',
-            pane: 'pane_IDPSiteLocations_8',
-            onEachFeature: pop_IDPSiteLocations_8,
+            dataVar: 'json_IDPSiteLocations_7',
+            layerName: 'layer_IDPSiteLocations_7',
+            pane: 'pane_IDPSiteLocations_7',
+            onEachFeature: pop_IDPSiteLocations_7,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_IDPSiteLocations_8_0(feature));
+                return L.circleMarker(latlng, style_IDPSiteLocations_7_0(feature));
             },
         });
-        bounds_group.addLayer(layer_IDPSiteLocations_8);
-        map.addLayer(layer_IDPSiteLocations_8);
-        function pop_WaterDeliveryPoint_9(feature, layer) {
+        bounds_group.addLayer(layer_IDPSiteLocations_7);
+        map.addLayer(layer_IDPSiteLocations_7);
+        function pop_WaterDeliveryPoint_8(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['No'] !== null ? autolinker.link(feature.properties['No'].toLocaleString()) : '') + '</td>\
@@ -813,9 +801,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_WaterDeliveryPoint_9_0() {
+        function style_WaterDeliveryPoint_8_0() {
             return {
-                pane: 'pane_WaterDeliveryPoint_9',
+                pane: 'pane_WaterDeliveryPoint_8',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -825,26 +813,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_WaterDeliveryPoint_9');
-        map.getPane('pane_WaterDeliveryPoint_9').style.zIndex = 409;
-        map.getPane('pane_WaterDeliveryPoint_9').style['mix-blend-mode'] = 'normal';
-        var layer_WaterDeliveryPoint_9 = new L.geoJson(json_WaterDeliveryPoint_9, {
+        map.createPane('pane_WaterDeliveryPoint_8');
+        map.getPane('pane_WaterDeliveryPoint_8').style.zIndex = 408;
+        map.getPane('pane_WaterDeliveryPoint_8').style['mix-blend-mode'] = 'normal';
+        var layer_WaterDeliveryPoint_8 = new L.geoJson(json_WaterDeliveryPoint_8, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_WaterDeliveryPoint_9',
-            layerName: 'layer_WaterDeliveryPoint_9',
-            pane: 'pane_WaterDeliveryPoint_9',
-            onEachFeature: pop_WaterDeliveryPoint_9,
+            dataVar: 'json_WaterDeliveryPoint_8',
+            layerName: 'layer_WaterDeliveryPoint_8',
+            pane: 'pane_WaterDeliveryPoint_8',
+            onEachFeature: pop_WaterDeliveryPoint_8,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_WaterDeliveryPoint_9_0(feature));
+                return L.marker(latlng, style_WaterDeliveryPoint_8_0(feature));
             },
         });
-        bounds_group.addLayer(layer_WaterDeliveryPoint_9);
-        function pop_NutritionSites_10(feature, layer) {
+        bounds_group.addLayer(layer_WaterDeliveryPoint_8);
+        function pop_NutritionSites_9(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Cluster'] !== null ? autolinker.link(feature.properties['Cluster'].toLocaleString()) : '') + '</td>\
@@ -910,9 +898,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_NutritionSites_10_0() {
+        function style_NutritionSites_9_0() {
             return {
-                pane: 'pane_NutritionSites_10',
+                pane: 'pane_NutritionSites_9',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -922,26 +910,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_NutritionSites_10');
-        map.getPane('pane_NutritionSites_10').style.zIndex = 410;
-        map.getPane('pane_NutritionSites_10').style['mix-blend-mode'] = 'normal';
-        var layer_NutritionSites_10 = new L.geoJson(json_NutritionSites_10, {
+        map.createPane('pane_NutritionSites_9');
+        map.getPane('pane_NutritionSites_9').style.zIndex = 409;
+        map.getPane('pane_NutritionSites_9').style['mix-blend-mode'] = 'normal';
+        var layer_NutritionSites_9 = new L.geoJson(json_NutritionSites_9, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_NutritionSites_10',
-            layerName: 'layer_NutritionSites_10',
-            pane: 'pane_NutritionSites_10',
-            onEachFeature: pop_NutritionSites_10,
+            dataVar: 'json_NutritionSites_9',
+            layerName: 'layer_NutritionSites_9',
+            pane: 'pane_NutritionSites_9',
+            onEachFeature: pop_NutritionSites_9,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_NutritionSites_10_0(feature));
+                return L.marker(latlng, style_NutritionSites_9_0(feature));
             },
         });
-        bounds_group.addLayer(layer_NutritionSites_10);
-        function pop_InformationCenter_11(feature, layer) {
+        bounds_group.addLayer(layer_NutritionSites_9);
+        function pop_InformationCenter_10(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Agency con'] !== null ? autolinker.link(feature.properties['Agency con'].toLocaleString()) : '') + '</td>\
@@ -1115,9 +1103,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_InformationCenter_11_0() {
+        function style_InformationCenter_10_0() {
             return {
-                pane: 'pane_InformationCenter_11',
+                pane: 'pane_InformationCenter_10',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -1127,27 +1115,27 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_InformationCenter_11');
-        map.getPane('pane_InformationCenter_11').style.zIndex = 411;
-        map.getPane('pane_InformationCenter_11').style['mix-blend-mode'] = 'normal';
-        var layer_InformationCenter_11 = new L.geoJson(json_InformationCenter_11, {
+        map.createPane('pane_InformationCenter_10');
+        map.getPane('pane_InformationCenter_10').style.zIndex = 410;
+        map.getPane('pane_InformationCenter_10').style['mix-blend-mode'] = 'normal';
+        var layer_InformationCenter_10 = new L.geoJson(json_InformationCenter_10, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_InformationCenter_11',
-            layerName: 'layer_InformationCenter_11',
-            pane: 'pane_InformationCenter_11',
-            onEachFeature: pop_InformationCenter_11,
+            dataVar: 'json_InformationCenter_10',
+            layerName: 'layer_InformationCenter_10',
+            pane: 'pane_InformationCenter_10',
+            onEachFeature: pop_InformationCenter_10,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_InformationCenter_11_0(feature));
+                return L.marker(latlng, style_InformationCenter_10_0(feature));
             },
         });
-        bounds_group.addLayer(layer_InformationCenter_11);
-        map.addLayer(layer_InformationCenter_11);
-        function pop_PublicSchool_12(feature, layer) {
+        bounds_group.addLayer(layer_InformationCenter_10);
+        map.addLayer(layer_InformationCenter_10);
+        function pop_PublicSchool_11(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Name of sc'] !== null ? autolinker.link(feature.properties['Name of sc'].toLocaleString()) : '') + '</td>\
@@ -1195,9 +1183,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_PublicSchool_12_0() {
+        function style_PublicSchool_11_0() {
             return {
-                pane: 'pane_PublicSchool_12',
+                pane: 'pane_PublicSchool_11',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -1207,26 +1195,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_PublicSchool_12');
-        map.getPane('pane_PublicSchool_12').style.zIndex = 412;
-        map.getPane('pane_PublicSchool_12').style['mix-blend-mode'] = 'normal';
-        var layer_PublicSchool_12 = new L.geoJson(json_PublicSchool_12, {
+        map.createPane('pane_PublicSchool_11');
+        map.getPane('pane_PublicSchool_11').style.zIndex = 411;
+        map.getPane('pane_PublicSchool_11').style['mix-blend-mode'] = 'normal';
+        var layer_PublicSchool_11 = new L.geoJson(json_PublicSchool_11, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_PublicSchool_12',
-            layerName: 'layer_PublicSchool_12',
-            pane: 'pane_PublicSchool_12',
-            onEachFeature: pop_PublicSchool_12,
+            dataVar: 'json_PublicSchool_11',
+            layerName: 'layer_PublicSchool_11',
+            pane: 'pane_PublicSchool_11',
+            onEachFeature: pop_PublicSchool_11,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_PublicSchool_12_0(feature));
+                return L.marker(latlng, style_PublicSchool_11_0(feature));
             },
         });
-        bounds_group.addLayer(layer_PublicSchool_12);
-        function pop_IDPSchool_13(feature, layer) {
+        bounds_group.addLayer(layer_PublicSchool_11);
+        function pop_IDPSchool_12(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['IDP sites'] !== null ? autolinker.link(feature.properties['IDP sites'].toLocaleString()) : '') + '</td>\
@@ -1241,9 +1229,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_IDPSchool_13_0() {
+        function style_IDPSchool_12_0() {
             return {
-                pane: 'pane_IDPSchool_13',
+                pane: 'pane_IDPSchool_12',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -1253,26 +1241,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_IDPSchool_13');
-        map.getPane('pane_IDPSchool_13').style.zIndex = 413;
-        map.getPane('pane_IDPSchool_13').style['mix-blend-mode'] = 'normal';
-        var layer_IDPSchool_13 = new L.geoJson(json_IDPSchool_13, {
+        map.createPane('pane_IDPSchool_12');
+        map.getPane('pane_IDPSchool_12').style.zIndex = 412;
+        map.getPane('pane_IDPSchool_12').style['mix-blend-mode'] = 'normal';
+        var layer_IDPSchool_12 = new L.geoJson(json_IDPSchool_12, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_IDPSchool_13',
-            layerName: 'layer_IDPSchool_13',
-            pane: 'pane_IDPSchool_13',
-            onEachFeature: pop_IDPSchool_13,
+            dataVar: 'json_IDPSchool_12',
+            layerName: 'layer_IDPSchool_12',
+            pane: 'pane_IDPSchool_12',
+            onEachFeature: pop_IDPSchool_12,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_IDPSchool_13_0(feature));
+                return L.marker(latlng, style_IDPSchool_12_0(feature));
             },
         });
-        bounds_group.addLayer(layer_IDPSchool_13);
-        function pop_HealthFacilities_14(feature, layer) {
+        bounds_group.addLayer(layer_IDPSchool_12);
+        function pop_HealthFacilities_13(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
@@ -1293,9 +1281,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_HealthFacilities_14_0() {
+        function style_HealthFacilities_13_0() {
             return {
-                pane: 'pane_HealthFacilities_14',
+                pane: 'pane_HealthFacilities_13',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -1305,26 +1293,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_HealthFacilities_14');
-        map.getPane('pane_HealthFacilities_14').style.zIndex = 414;
-        map.getPane('pane_HealthFacilities_14').style['mix-blend-mode'] = 'normal';
-        var layer_HealthFacilities_14 = new L.geoJson(json_HealthFacilities_14, {
+        map.createPane('pane_HealthFacilities_13');
+        map.getPane('pane_HealthFacilities_13').style.zIndex = 413;
+        map.getPane('pane_HealthFacilities_13').style['mix-blend-mode'] = 'normal';
+        var layer_HealthFacilities_13 = new L.geoJson(json_HealthFacilities_13, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HealthFacilities_14',
-            layerName: 'layer_HealthFacilities_14',
-            pane: 'pane_HealthFacilities_14',
-            onEachFeature: pop_HealthFacilities_14,
+            dataVar: 'json_HealthFacilities_13',
+            layerName: 'layer_HealthFacilities_13',
+            pane: 'pane_HealthFacilities_13',
+            onEachFeature: pop_HealthFacilities_13,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_HealthFacilities_14_0(feature));
+                return L.marker(latlng, style_HealthFacilities_13_0(feature));
             },
         });
-        bounds_group.addLayer(layer_HealthFacilities_14);
-        function pop_GBVServicePoint_15(feature, layer) {
+        bounds_group.addLayer(layer_HealthFacilities_13);
+        function pop_GBVServicePoint_14(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Type of Se'] !== null ? autolinker.link(feature.properties['Type of Se'].toLocaleString()) : '') + '</td>\
@@ -1342,9 +1330,9 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_GBVServicePoint_15_0() {
+        function style_GBVServicePoint_14_0() {
             return {
-                pane: 'pane_GBVServicePoint_15',
+                pane: 'pane_GBVServicePoint_14',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -1354,25 +1342,25 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_GBVServicePoint_15');
-        map.getPane('pane_GBVServicePoint_15').style.zIndex = 415;
-        map.getPane('pane_GBVServicePoint_15').style['mix-blend-mode'] = 'normal';
-        var layer_GBVServicePoint_15 = new L.geoJson(json_GBVServicePoint_15, {
+        map.createPane('pane_GBVServicePoint_14');
+        map.getPane('pane_GBVServicePoint_14').style.zIndex = 414;
+        map.getPane('pane_GBVServicePoint_14').style['mix-blend-mode'] = 'normal';
+        var layer_GBVServicePoint_14 = new L.geoJson(json_GBVServicePoint_14, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_GBVServicePoint_15',
-            layerName: 'layer_GBVServicePoint_15',
-            pane: 'pane_GBVServicePoint_15',
-            onEachFeature: pop_GBVServicePoint_15,
+            dataVar: 'json_GBVServicePoint_14',
+            layerName: 'layer_GBVServicePoint_14',
+            pane: 'pane_GBVServicePoint_14',
+            onEachFeature: pop_GBVServicePoint_14,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_GBVServicePoint_15_0(feature));
+                return L.marker(latlng, style_GBVServicePoint_14_0(feature));
             },
         });
-        bounds_group.addLayer(layer_GBVServicePoint_15);
+        bounds_group.addLayer(layer_GBVServicePoint_14);
         var osmGeocoder = new L.Control.Geocoder({
             collapsed: true,
             position: 'topleft',
@@ -1384,15 +1372,15 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/GBVServicePoint_15.png" /> GBV Service Point': layer_GBVServicePoint_15,'<img src="legend/HealthFacilities_14.png" /> Health Facilities': layer_HealthFacilities_14,'<img src="legend/IDPSchool_13.png" /> IDP School': layer_IDPSchool_13,'<img src="legend/PublicSchool_12.png" /> Public School': layer_PublicSchool_12,'<img src="legend/InformationCenter_11.png" /> Information Center': layer_InformationCenter_11,'<img src="legend/NutritionSites_10.png" /> Nutrition Sites': layer_NutritionSites_10,'<img src="legend/WaterDeliveryPoint_9.png" /> Water Delivery Point': layer_WaterDeliveryPoint_9,'<img src="legend/IDPSiteLocations_8.png" /> IDP Site Locations': layer_IDPSiteLocations_8,'AccessibilityRoadNetwork<br /><table><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_7_PrimaryRoad0.png" /></td><td>Primary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_7_SecondaryRoad1.png" /></td><td>Secondary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_7_TertiaryRoad2.png" /></td><td>Tertiary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_7_InternalRoad3.png" /></td><td>Internal Road</td></tr></table>': layer_AccessibilityRoadNetwork_7,'<img src="legend/CatchmentZoneAreaBaidoa_6.png" /> Catchment/Zone Area Baidoa': layer_CatchmentZoneAreaBaidoa_6,'Village City Plan<br /><table><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Adaado0.png" /></td><td>Adaado</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Bardale1.png" /></td><td>Bardale</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Durasalam2.png" /></td><td>Durasalam</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Horseed3.png" /></td><td>Horseed</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_HowlWadaag4.png" /></td><td>Howl Wadaag</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Isha5.png" /></td><td>Isha</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Salamey6.png" /></td><td>Salamey</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Towfiq7.png" /></td><td>Towfiq</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Wadajiir8.png" /></td><td>Wadajiir</td></tr><tr><td style="text-align: center;"><img src="legend/VillageCityPlan_5_Weberi9.png" /></td><td>Weberi</td></tr></table>': layer_VillageCityPlan_5,'<img src="legend/IDPSiteDemarcation_4.png" /> IDP Site Demarcation': layer_IDPSiteDemarcation_4,'<img src="legend/OPZBoundary_3.png" /> OPZ Boundary': layer_OPZBoundary_3,'<img src="legend/DistrictBoundary_2.png" /> District Boundary': layer_DistrictBoundary_2,"Esri Topographic": layer_EsriTopographic_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/GBVServicePoint_14.png" /> GBV Service Point': layer_GBVServicePoint_14,'<img src="legend/HealthFacilities_13.png" /> Health Facilities': layer_HealthFacilities_13,'<img src="legend/IDPSchool_12.png" /> IDP School': layer_IDPSchool_12,'<img src="legend/PublicSchool_11.png" /> Public School': layer_PublicSchool_11,'<img src="legend/InformationCenter_10.png" /> Information Center': layer_InformationCenter_10,'<img src="legend/NutritionSites_9.png" /> Nutrition Sites': layer_NutritionSites_9,'<img src="legend/WaterDeliveryPoint_8.png" /> Water Delivery Point': layer_WaterDeliveryPoint_8,'<img src="legend/IDPSiteLocations_7.png" /> IDP Site Locations': layer_IDPSiteLocations_7,'AccessibilityRoadNetwork<br /><table><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_6_PrimaryRoad0.png" /></td><td>Primary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_6_SecondaryRoad1.png" /></td><td>Secondary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_6_TertiaryRoad2.png" /></td><td>Tertiary Road</td></tr><tr><td style="text-align: center;"><img src="legend/AccessibilityRoadNetwork_6_InternalRoad3.png" /></td><td>Internal Road</td></tr></table>': layer_AccessibilityRoadNetwork_6,'<img src="legend/CatchmentZoneAreaBaidoa_5.png" /> Catchment/Zone Area Baidoa': layer_CatchmentZoneAreaBaidoa_5,'VillageBoundary<br /><table><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Adaado0.png" /></td><td>Adaado</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Bardale1.png" /></td><td>Bardale</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Durasalam2.png" /></td><td>Durasalam</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Horseed3.png" /></td><td>Horseed</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_HowlWadaag4.png" /></td><td>Howl Wadaag</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Isha5.png" /></td><td>Isha</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Salamey6.png" /></td><td>Salamey</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Towfiq7.png" /></td><td>Towfiq</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Wadajiir8.png" /></td><td>Wadajiir</td></tr><tr><td style="text-align: center;"><img src="legend/VillageBoundary_4_Weberi9.png" /></td><td>Weberi</td></tr></table>': layer_VillageBoundary_4,'<img src="legend/IDPSiteDemarcation_3.png" /> IDP Site Demarcation': layer_IDPSiteDemarcation_3,'<img src="legend/OPZBoundary_2.png" /> OPZ Boundary': layer_OPZBoundary_2,'<img src="legend/DistrictBoundary_1.png" /> District Boundary': layer_DistrictBoundary_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
         setBounds();
         var i = 0;
-        layer_VillageCityPlan_5.eachLayer(function(layer) {
+        layer_VillageBoundary_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['subvillage'] !== null?String('<div style="color: #323232; font-size: 20pt; font-family: \'Gill Sans MT\', sans-serif;">' + layer.feature.properties['subvillage']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_VillageCityPlan_5'});
+            layer.bindTooltip((layer.feature.properties['village'] !== null?String('<div style="color: #323232; font-size: 12pt; font-weight: bold; font-family: \'Gill Sans MT\', sans-serif;">' + layer.feature.properties['village']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_VillageBoundary_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1400,12 +1388,12 @@
               i++;
         });
         var i = 0;
-        layer_CatchmentZoneAreaBaidoa_6.eachLayer(function(layer) {
+        layer_CatchmentZoneAreaBaidoa_5.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['ID_N'] !== null?String('<div style="color: #0040fe; font-size: 15pt; font-family: \'Gill Sans MT\', sans-serif;">' + layer.feature.properties['ID_N']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_CatchmentZoneAreaBaidoa_6'});
+            layer.bindTooltip((layer.feature.properties['ID_N'] !== null?String('<div style="color: #0040fe; font-size: 15pt; font-family: \'Gill Sans MT\', sans-serif;">' + layer.feature.properties['ID_N']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_CatchmentZoneAreaBaidoa_5'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1413,12 +1401,12 @@
               i++;
         });
         var i = 0;
-        layer_HealthFacilities_14.eachLayer(function(layer) {
+        layer_HealthFacilities_13.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Health Fac'] !== null?String('<div style="color: #e00007; font-size: 12pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Health Fac']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_HealthFacilities_14'});
+            layer.bindTooltip((layer.feature.properties['Health Fac'] !== null?String('<div style="color: #e00007; font-size: 12pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Health Fac']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_HealthFacilities_13'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -1426,27 +1414,27 @@
               i++;
         });
         var i = 0;
-        layer_GBVServicePoint_15.eachLayer(function(layer) {
+        layer_GBVServicePoint_14.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Type of Se'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Type of Se']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_GBVServicePoint_15'});
+            layer.bindTooltip((layer.feature.properties['Type of Se'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Type of Se']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_GBVServicePoint_14'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_DistrictBoundary_2,layer_OPZBoundary_3,layer_IDPSiteDemarcation_4,layer_VillageCityPlan_5,layer_CatchmentZoneAreaBaidoa_6,layer_IDPSiteLocations_8,layer_HealthFacilities_14,layer_GBVServicePoint_15]);
+        resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_IDPSiteDemarcation_3,layer_VillageBoundary_4,layer_CatchmentZoneAreaBaidoa_5,layer_IDPSiteLocations_7,layer_HealthFacilities_13,layer_GBVServicePoint_14]);
         map.on("zoomend", function(){
-            resetLabels([layer_DistrictBoundary_2,layer_OPZBoundary_3,layer_IDPSiteDemarcation_4,layer_VillageCityPlan_5,layer_CatchmentZoneAreaBaidoa_6,layer_IDPSiteLocations_8,layer_HealthFacilities_14,layer_GBVServicePoint_15]);
+            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_IDPSiteDemarcation_3,layer_VillageBoundary_4,layer_CatchmentZoneAreaBaidoa_5,layer_IDPSiteLocations_7,layer_HealthFacilities_13,layer_GBVServicePoint_14]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_DistrictBoundary_2,layer_OPZBoundary_3,layer_IDPSiteDemarcation_4,layer_VillageCityPlan_5,layer_CatchmentZoneAreaBaidoa_6,layer_IDPSiteLocations_8,layer_HealthFacilities_14,layer_GBVServicePoint_15]);
+            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_IDPSiteDemarcation_3,layer_VillageBoundary_4,layer_CatchmentZoneAreaBaidoa_5,layer_IDPSiteLocations_7,layer_HealthFacilities_13,layer_GBVServicePoint_14]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_DistrictBoundary_2,layer_OPZBoundary_3,layer_IDPSiteDemarcation_4,layer_VillageCityPlan_5,layer_CatchmentZoneAreaBaidoa_6,layer_IDPSiteLocations_8,layer_HealthFacilities_14,layer_GBVServicePoint_15]);
+            resetLabels([layer_DistrictBoundary_1,layer_OPZBoundary_2,layer_IDPSiteDemarcation_3,layer_VillageBoundary_4,layer_CatchmentZoneAreaBaidoa_5,layer_IDPSiteLocations_7,layer_HealthFacilities_13,layer_GBVServicePoint_14]);
         });
         </script>
     </body>
